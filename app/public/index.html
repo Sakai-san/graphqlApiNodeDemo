@@ -33,29 +33,23 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
       const renderPost = (ulElement, post) => {
         const li = document.createElement('li');
-
         const postParagraph = document.createElement('p');
         const postLabel = document.createElement('strong');
         postLabel.append(document.createTextNode('Post: '));
         const postTitle = document.createTextNode(post.title);
         postParagraph.append(postLabel, postTitle);
-
         const authorParagraph = document.createElement('p');
         const authorLabel = document.createElement('strong');
         authorLabel.append(document.createTextNode('Author: '));
         const authorFirstName = document.createTextNode(post.author.firstName);
         authorParagraph.append(authorLabel, authorFirstName);
-
         li.append(postParagraph, authorParagraph);
         ulElement.append(li);
       };
-
       const ul = document.querySelectorAll('#container ul')[0];
       let resolvedPosts = null;
-
       fetch("/posts")
         .then((response) => response.json())
         .then((posts) => {

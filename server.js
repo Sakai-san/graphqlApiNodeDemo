@@ -1,30 +1,31 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"); 
 const faker = require("faker");
 const lodash = require("lodash");
-
+const graphqlExpress = require("graphql-server-express"):
 const db = require("./models");
+const apiPost = require("./app/api/post");
+const apiAuthor = require("./app/api/author");
+
 const app = express();
 
-const routes = require("./app/routes/apiRoutes");
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text() );
-app.use(bodyParser.json({type: 'application/vnf.api+json'}));
-
+app.use('/graphql', bodyParser.json(), graphqlExpress({
+  schema: 'graphqlApiNodeDemo'
+}))
 app.use(express.static("app/public"));
 
-routes(app, db);
+apiPost(app, db);
+apiAuthor(app, db);
 
 db.sequelize.sync().then( () => {
+  // populate author table with dummy data
   db.author.bulkCreate(
     lodash.times(10, () => ({
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName()
     }))
   );
-
+  // populate post table with dummy data
   db.post.bulkCreate(
     lodash.times(10, () => ({
       title: faker.lorem.sentence(),
@@ -36,15 +37,3 @@ db.sequelize.sync().then( () => {
     console.log("App listening on port 3000!")
   );
 });
-
-/*
-restapi 
-https://www.youtube.com/watch?v=oe0rkp14osg
-https://www.youtube.com/watch?v=De-WBBqUMSo
-
-
-graphql
-https://www.youtube.com/watch?v=hqk30IVeYak
-https://www.youtube.com/watch?v=xBAJ5nQkeiM
-
-*/
