@@ -1,14 +1,14 @@
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const Post = sequelize.define('post', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       title: DataTypes.STRING,
       content: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
       },
     },
     {
@@ -21,4 +21,4 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return Post;
-}
+};

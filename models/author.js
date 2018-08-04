@@ -1,12 +1,12 @@
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const Author = sequelize.define('author', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING
+      lastName: DataTypes.STRING,
     },
     {
       freezeTableName: true,
@@ -18,4 +18,4 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return Author;
-}
+};

@@ -2,3 +2,20 @@
 
 ## Instructions
 Please do follow the instructions in the article published on [medium](https://medium.com/infocentric).
+
+
+## project setup
+```
+  npm i --save apollo-server-express apollo-server-express body-parser express mysql2 sequelize
+
+  npm i --save-dev nodemon babel-cli babel-preset-env babel-preset-stage-3 eslint-cli
+  ./node_modules/eslint/bin/eslint.js --init
+  
+  -> Use a popular style guide
+  -> Airbnb (https://github.com/airbnb/javascript)
+  -> No
+  -> JavaScript
+  -> Yes
+  -> Yes
+
+```

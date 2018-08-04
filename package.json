@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run init-db && ./node_modules/nodemon/bin/nodemon.js server.js",
+    "start": "npm run init-db && ./node_modules/nodemon/bin/nodemon.js --exec babel-node server.js",
     "sequelize-skeleton": "./node_modules/sequelize-cli/lib/sequelize init:models; ./node_modules/sequelize-cli/lib/sequelize init:config",
     "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS rest_api_node_demo; CREATE DATABASE rest_api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
   },
   "dependencies": {
+    "apollo-server-express": "^2.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "graphql-server-express": "^1.4.0",
     "mysql2": "^1.5.3",
     "sequelize": "^4.38.0"
   },
@@ -19,6 +19,12 @@
   "author": "Infocentric Research AG, Baden, Switzerland",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "faker": "^4.1.0",
     "lodash": "^4.17.10",
     "nodemon": "^1.18.3",
