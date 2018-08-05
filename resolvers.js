@@ -6,7 +6,7 @@ export default {
   },
   Mutation: {
     createPost: (parent, args, { db }, info) => db.post.create(args),
-    updatePost: (parent, {id, title, content}, { db }, info) => 
+    updatePost: (parent, { id, title, content }, { db }, info) => 
       db.post.update({
         title: title,
         content: content
@@ -17,7 +17,7 @@ export default {
       }
     }),
     deletePost: (parent, {id}, { db }, info) => 
-        db.post.delete({
+        db.post.destroy({
         where: {
          id: id
       }
