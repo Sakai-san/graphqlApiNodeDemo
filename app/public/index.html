@@ -67,7 +67,26 @@
           })
         })
         .catch((e) => console.warn(e));
-    });      
+    });
+
+/*
+    import ApolloClient from 'apollo-client'
+    import gql from 'graphql-tag'
+
+    const client = new ApolloClient();
+
+    let query = gql`
+  query {
+    foo {
+      bar
+    }
+  }
+`
+    client.query({query}).then((results) => {
+      //do something useful
+    })
+*/
+// npm install apollo-client apollo-cache-inmemory apollo-link-http graphql-tag graphql --save
   </script>
 </body>
 

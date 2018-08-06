@@ -1,30 +1,29 @@
 export default `
   type Author {
-    id: Int!
+    id: ID!
     firstName: String!
     lastName: String!
-    getPosts: [Post]
+    posts: [Post]!
   }
 
   type Post {
-    id: Int!
+    id: ID!
     title: String
     content: String!
-    authorId: Int!
-    getAuthor: Author
+    authorId: ID!
+    author: Author
   }
 
   type Mutation {
     createPost(title: String, content:String!): Post
-    updatePost(id: Int!, title: String, content:String!): [Int!]!
-    deletePost(id: Int!): Int!
+    updatePost(id: ID!, title: String, content:String!): [Int!]!
+    deletePost(id: ID!): Int!
   }
 
   type Query {
-    allAuthors: [Author]
-    allPosts: [Post]
-    authors(id: Int!): [Author]
-    getPosts(id: Int!): [Post]
-    getAuthor(id: Int!): Author
+    posts: [Post]!
+    post(id: Int!): Post
+    author(id: Int!): Author
+    authors: [Author]!
   }
 `;

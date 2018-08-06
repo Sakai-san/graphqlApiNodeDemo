@@ -1,28 +1,18 @@
 export default {
+  Author: {
+    posts: ( parent, { authorId }, { db }, info) =>
+      db.post.find({where: {authorId: authorId} })
+  },
+  Post: {
+    author: ( parent, args, { db }, info) => {
+      return db.author.findById(parent.dataValues.authorId);
+    }
+  },
   Query: {
-    allAuthors: (parent, args, { db }, info) => db.author.findAll(),
-    allPosts: (parent, args, { db }, info) => db.post.findAll(),
-    authors: (parent, { id }, { db }, info) => db.author.findById(id),
-    getPosts: (parent, { id }, { db }, info) => db.post.findById(id),
-    getAuthor: (parent, { id }, { db }, info) => db.author.findById(id),
-  },
-  Mutation: {
-    createPost: (parent, args, { db }, info) => db.post.create(args),
-    updatePost: (parent, { id, title, content }, { db }, info) => 
-      db.post.update({
-        title: title,
-        content: content
-      },
-      {
-        where: {
-          id: id
-      }
-    }),
-    deletePost: (parent, {id}, { db }, info) => 
-        db.post.destroy({
-        where: {
-         id: id
-      }
-    })
-  },
+    posts: ( parent, args, { db }, info) => db.post.findAll(),
+    authors: ( parent, args, { db }, info) => db.author.findAll(),
+    post: ( parent, { id }, { db }, info) => db.post.findById(id),
+    author: ( parent, { id }, { db }, info) => db.author.findById(id) 
+  }
+
 };
