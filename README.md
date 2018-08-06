@@ -6,9 +6,10 @@ Please do follow the instructions in the article published on [medium](https://m
 
 ## project setup
 ```
-  npm i --save apollo-server-express apollo-server-express body-parser express mysql2 sequelize
+  npm i --save apollo-server-express apollo-server-express body-parser express mysql2 graphql graphql-tools sequelize
 
-  npm i --save-dev nodemon babel-cli babel-preset-env babel-preset-stage-3 eslint-cli
+  npm i --save-dev nodemon babel-cli babel-preset-env babel-preset-stage-3 eslint-cli faker lodash
+
   ./node_modules/eslint/bin/eslint.js --init
   
   -> Use a popular style guide

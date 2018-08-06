@@ -1,8 +1,10 @@
 export default {
   Query: {
+    allAuthors: (parent, args, { db }, info) => db.author.findAll(),
     allPosts: (parent, args, { db }, info) => db.post.findAll(),
-    getPost: (parent, { id }, { db }, info) => db.post.findById(id),
-    getAuthor: (parent, { id }, { db }, info) => db.post.findById(id),
+    authors: (parent, { id }, { db }, info) => db.author.findById(id),
+    getPosts: (parent, { id }, { db }, info) => db.post.findById(id),
+    getAuthor: (parent, { id }, { db }, info) => db.author.findById(id),
   },
   Mutation: {
     createPost: (parent, args, { db }, info) => db.post.create(args),

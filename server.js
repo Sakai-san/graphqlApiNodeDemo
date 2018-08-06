@@ -1,26 +1,28 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import { graphqlExpress } from 'apollo-server-express';
+import { ApolloServer, gql } from 'apollo-server';
+
+import faker from 'faker';
+import lodash from 'lodash';
+
+import apiPost from './app/api/post';
+import apiAuthor from './app/api/author';
+
+
 import typeDefs from './schema';
 import resolvers from './resolvers';
-import db from "./models";
+import db from './models';
 
-const faker = require("faker");
-const lodash = require("lodash");
+/*
 
-const apiPost = require("./app/api/post");
-const apiAuthor = require("./app/api/author");
-
-const app = express();
-
-app.use('/graphql', bodyParser.json(), graphqlExpress({
-  schema: 'graphqlApiNodeDemo',
-  context: { db },
-}))
 app.use(express.static('app/public'));
 
-apiPost(app, db);
-apiAuthor(app, db);
+*/
+
+const server = new ApolloServer({
+  typeDefs: gql(typeDefs),
+  resolvers,
+  context: { db }
+});
+
 
 db.sequelize.sync().then(() => {
   // populate author table with dummy data
@@ -36,9 +38,8 @@ db.sequelize.sync().then(() => {
       title: faker.lorem.sentence(),
       content: faker.lorem.paragraph(),
       authorId: lodash.random(1, 10),
-    }))
+    })),
   );
-  app.listen(8080, () => 
-    console.log("App listening on port 8080!")
-  );
+
+  server.listen().then(({ url }) => { console.log(`🚀  Server ready at ${url}`); });
 });

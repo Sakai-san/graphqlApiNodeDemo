@@ -8,9 +8,11 @@
     "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS rest_api_node_demo; CREATE DATABASE rest_api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
   },
   "dependencies": {
-    "apollo-server-express": "^2.0.0",
+    "apollo-server": "^2.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^3.1.1",
     "mysql2": "^1.5.3",
     "sequelize": "^4.38.0"
   },

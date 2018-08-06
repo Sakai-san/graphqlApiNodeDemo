@@ -1,17 +1,16 @@
 export default (sequelize, DataTypes) => {
   const Author = sequelize.define('author', {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-      freezeTableName: true,
-    }
-  );
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+  },
+  {
+    freezeTableName: true,
+  });
 
   Author.associate = (models) => {
     Author.hasMany(models.post);
