@@ -32,4 +32,9 @@ Restful API's are optimized for servers, not clients. Mark Twain
 
 Too many HTTP request
 2) Client first popularized by netfilx
+https://www.youtube.com/watch?v=broQmxQAMjM
 Separated endpoints for desktop, mobile, TV.
+
+3) graphQL is actually two different things :
+  specification
+  query language for API
