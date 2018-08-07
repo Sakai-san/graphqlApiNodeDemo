@@ -25,3 +25,11 @@ Please do follow the instructions in the article published on [medium](https://m
 some resource
 https://www.youtube.com/watch?v=kXH2dbnHYA0
 https://www.youtube.com/watch?v=DNPVqK_woRQ
+
+
+1)
+Restful API's are optimized for servers, not clients. Mark Twain
+
+Too many HTTP request
+2) Client first popularized by netfilx
+Separated endpoints for desktop, mobile, TV.
