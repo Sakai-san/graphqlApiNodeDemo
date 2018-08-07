@@ -38,3 +38,15 @@ Separated endpoints for desktop, mobile, TV.
 3) graphQL is actually two different things :
   specification
   query language for API
+
+
+
+Problem with REST API
+
+* no specification on how to query data, e.g. ascending sorting by author name.
+* transform data structure before actully we can use it
+* maintain a lot a different endpoints
+* load unnecessary data
+* do multiple HTTP requests
+
+Graphql is Generic way of serving diffent kindof clients.

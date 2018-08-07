@@ -14,5 +14,4 @@ export default {
     post: ( parent, { id }, { db }, info) => db.post.findById(id),
     author: ( parent, { id }, { db }, info) => db.author.findById(id) 
   }
-
 };
