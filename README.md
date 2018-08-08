@@ -50,3 +50,18 @@ Problem with REST API
 * do multiple HTTP requests
 
 Graphql is Generic way of serving diffent kindof clients.
+Schema written in the so-called Schema Definition Language
+
+Three types of queries : Query, Mutation, Subscription
+There are equivlent to entries point in the rest world. 
+Query is equivalt to 
+
+Release in 2015 but prototype started in 2012.
+
+Graphql is a language for API. GraphQL has nothing to do with database language.
+
+the args in the resolver are the args passed in the client query
+
+Schema is a data model of data you can query.
+
+! means that the field is required
