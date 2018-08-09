@@ -6,9 +6,11 @@ Please do follow the instructions in the article published on [medium](https://m
 
 ## project setup
 ```
-  npm i --save apollo-server-express apollo-server-express body-parser express mysql2 graphql graphql-tools sequelize
+  npm i --save apollo-server-express body-parser express mysql2 graphql graphql-tools sequelize
 
-  npm i --save-dev nodemon babel-cli babel-preset-env babel-preset-stage-3 eslint-cli faker lodash
+  npm install webpack webpack-cli --save-dev
+
+  npm i --save-dev nodemon babel-cli babel-preset-env babel-preset-stage-3 faker lodash
 
   ./node_modules/eslint/bin/eslint.js --init
   
@@ -50,9 +52,9 @@ Problem with REST API
 * do multiple HTTP requests
 
 Graphql is Generic way of serving diffent kindof clients.
-Schema written in the so-called Schema Definition Language
+Schema written in the so-called Schema Definition Language. Schema is a model for your API.
 
-Three types of queries : Query, Mutation, Subscription
+Three root types : Query, Mutation, Subscription
 There are equivlent to entries point in the rest world. 
 Query is equivalt to 
 

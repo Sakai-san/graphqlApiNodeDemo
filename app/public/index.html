@@ -31,7 +31,9 @@
     <h2>Posts and their author</h2>
     <ul></ul>
   </div>
+  <script src="js/bundle.min.js"></script>
   <script>
+    /*
     document.addEventListener('DOMContentLoaded', function () {
       const renderPost = (ulElement, post) => {
         const li = document.createElement('li');
@@ -49,7 +51,10 @@
         ulElement.append(li);
       };
       const ul = document.querySelectorAll('#container ul')[0];
+
+
       let resolvedPosts = null;
+      
       fetch("/posts")
         .then((response) => response.json())
         .then((posts) => {
@@ -68,25 +73,7 @@
         })
         .catch((e) => console.warn(e));
     });
-
-/*
-    import ApolloClient from 'apollo-client'
-    import gql from 'graphql-tag'
-
-    const client = new ApolloClient();
-
-    let query = gql`
-  query {
-    foo {
-      bar
-    }
-  }
-`
-    client.query({query}).then((results) => {
-      //do something useful
-    })
-*/
-// npm install apollo-client apollo-cache-inmemory apollo-link-http graphql-tag graphql --save
+    */
   </script>
 </body>
 
