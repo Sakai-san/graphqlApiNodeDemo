@@ -1,12 +1,7 @@
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
-
 import faker from 'faker';
 import lodash from 'lodash';
-
-import apiPost from './app/api/post';
-import apiAuthor from './app/api/author';
-
 import typeDefs from './schema';
 import resolvers from './resolvers';
 import db from './models';

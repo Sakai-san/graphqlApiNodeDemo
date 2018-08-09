@@ -5,7 +5,7 @@ export default {
   },
   Post: {
     author: ( parent, args, { db }, info) => {
-      return db.author.findById(parent.dataValues.authorId);
+      return parent.getAuthor();
     }
   },
   Query: {
