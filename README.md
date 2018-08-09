@@ -4,6 +4,14 @@
 Please do follow the instructions in the article published on [medium](https://medium.com/infocentric).
 
 
+# apollo server 2.0
+https://github.com/apollographql/apollo-server
+
+# apollo client 2.0
+https://github.com/apollographql/apollo-client
+
+
+
 ## project setup
 ```
   npm i --save apollo-server-express body-parser express mysql2 graphql graphql-tools sequelize
