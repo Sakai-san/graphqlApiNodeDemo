@@ -22,9 +22,7 @@ const query = gql`
   query {
     posts {
       title
-      content
       author {
-        lastName
         firstName
       }
     }

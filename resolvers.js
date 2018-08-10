@@ -4,6 +4,12 @@ export default {
       db.post.find({where: {authorId: authorId} })
   },
   Post: {
+
+    title: ( parent, args, { db }, info) => {
+      console.log(parent);
+      return parent.title;
+    },
+
     author: ( parent, args, { db }, info) => {
       return parent.getAuthor();
     }
