@@ -12,13 +12,13 @@ export default {
     author: (parent, { id }, { db }, info) => db.author.findById(id) 
   },
   Mutation: {
-    createPost: (parent, {title, content, authorId}, { db }, info) =>
+    createPost: (parent, { title, content, authorId }, { db }, info) =>
       db.post.create({
-        title,
-        content,
-        authorId
+        title: title,
+        content: content,
+        authorId: authorId
       }),
-    updatePost: (parent, {title, content, id}, { db }, info) =>
+    updatePost: (parent, { title, content, id }, { db }, info) =>
       db.post.update({
         title: title,
         content: content

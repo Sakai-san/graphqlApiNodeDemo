@@ -3,7 +3,7 @@ export default `
     id: ID!
     firstName: String!
     lastName: String!
-    posts: [Post]!
+    posts: [Post!]!
   }
 
   type Post {
@@ -14,16 +14,16 @@ export default `
     author: Author!
   }
 
+  type Query {
+    posts: [Post!]!
+    post(id: ID!): Post
+    author(id: ID!): Author
+    authors: [Author!]!
+  }
+
   type Mutation {
     createPost(title: String, content:String!, authorId: ID!): Post!
     updatePost(id: ID!, title: String, content:String!): [Int!]!
     deletePost(id: ID!): Int!
-  }
-
-  type Query {
-    posts: [Post]!
-    post(id: ID!): Post
-    author(id: ID!): Author
-    authors: [Author]!
   }
 `;
