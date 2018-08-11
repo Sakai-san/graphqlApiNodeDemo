@@ -1,6 +1,23 @@
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 
+const client = new ApolloClient();
+const query = gql`
+  query {
+    posts {
+      title
+      author {
+        firstName
+      }
+    }
+  }
+`;
+
+const ul = document.querySelectorAll('#container ul')[0];
+client.query({ query }).then((results) => {
+  results.data.posts.forEach( (post) => renderPost(ul, post) );
+});
+
 const renderPost = (ulElement, post) => {
   const li = document.createElement('li');
   const postParagraph = document.createElement('p');
@@ -16,22 +33,3 @@ const renderPost = (ulElement, post) => {
   li.append(postParagraph, authorParagraph);
   ulElement.append(li);
 };
-
-const client = new ApolloClient();
-const query = gql`
-  query {
-    posts {
-      title
-      author {
-        firstName
-      }
-    }
-  }
-`;
-
-client.query({ query }).then((results) => {
-  const ul = document.querySelectorAll('#container ul')[0];
-  results.data.posts.forEach( (post) => {
-    renderPost(ul, post);
-  });
-});

@@ -66,3 +66,12 @@ the args in the resolver are the args passed in the client query
 Schema is a data model of data you can query.
 
 ! means that the field is required
+
+
+    title: ( parent, args, { db }, info) => {
+      console.log(">>>>>>>>> parent", JSON.stringify( parent));
+
+      console.log(">>>>>>>>> field", parent.title);
+      return parent.title;
+    },
+
