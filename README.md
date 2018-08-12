@@ -1,4 +1,4 @@
-# Setup a GraphQL API with Sequelize and Express.js
+# Setup a GraphQL API with Apollo 2.0 Sequelize and Express.js
 
 ## Instructions
 Please do follow the instructions in the article published on [medium](https://medium.com/infocentric).
@@ -38,7 +38,6 @@ Problem with REST API
 * load unnecessary data
 * do multiple HTTP requests
 
-Schema written in the so-called Schema Definition Language. Schema is a model for your API.
 
 Three root types : Query, Mutation, Subscription
 There are equivlent to entries point in the rest world. 
