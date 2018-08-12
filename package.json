@@ -6,19 +6,15 @@
     "build": "webpack",
     "start": "npm run init-db && ./node_modules/nodemon/bin/nodemon.js --exec babel-node server.js",
     "sequelize-skeleton": "./node_modules/sequelize-cli/lib/sequelize init:models; ./node_modules/sequelize-cli/lib/sequelize init:config",
-    "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS rest_api_node_demo; CREATE DATABASE rest_api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
+    "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
   },
   "dependencies": {
     "apollo-boost": "^0.1.13",
-    "apollo-cache-inmemory": "^1.2.7",
-    "apollo-client": "^2.3.8",
-    "apollo-link-http": "^1.5.4",
     "apollo-server-express": "^2.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
-    "install": "^0.12.1",
     "mysql2": "^1.5.3",
     "sequelize": "^4.38.0"
   },

@@ -11,18 +11,6 @@ https://github.com/apollographql/apollo-server
 https://github.com/apollographql/apollo-client
 
 
-
-## project setup
-```
-  npm i --save apollo-server-express body-parser express mysql2 graphql graphql-tools sequelize
-
-  npm install webpack webpack-cli --save-dev
-
-  npm i --save-dev nodemon babel-cli babel-preset-env babel-preset-stage-3 faker lodash
-
-```
-
-
 some resource
 https://www.youtube.com/watch?v=kXH2dbnHYA0
 https://www.youtube.com/watch?v=DNPVqK_woRQ
@@ -50,16 +38,12 @@ Problem with REST API
 * load unnecessary data
 * do multiple HTTP requests
 
-Graphql is Generic way of serving diffent kindof clients.
 Schema written in the so-called Schema Definition Language. Schema is a model for your API.
 
 Three root types : Query, Mutation, Subscription
 There are equivlent to entries point in the rest world. 
 Query is equivalt to 
 
-Release in 2015 but prototype started in 2012.
-
-Graphql is a language for API. GraphQL has nothing to do with database language.
 
 the args in the resolver are the args passed in the client query
 
