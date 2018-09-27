@@ -13,23 +13,21 @@ const query = gql`
   }
 `;
 
-const ul = document.querySelectorAll('#container ul')[0];
+const body = document.body;
 client.query({ query }).then((results) => {
-  results.data.posts.forEach( (post) => renderPost(ul, post) );
+  results.data.posts.forEach( (post) => renderPost(body, post) );
 });
 
-const renderPost = (ulElement, post) => {
-  const li = document.createElement('li');
-  const postParagraph = document.createElement('p');
-  const postLabel = document.createElement('strong');
-  postLabel.append(document.createTextNode('Post: '));
-  const postTitle = document.createTextNode(post.title);
-  postParagraph.append(postLabel, postTitle);
-  const authorParagraph = document.createElement('p');
-  const authorLabel = document.createElement('strong');
-  authorLabel.append(document.createTextNode('Author: '));
-  const authorFirstName = document.createTextNode( post.author.firstName);
-  authorParagraph.append(authorLabel, authorFirstName);
-  li.append(postParagraph, authorParagraph);
-  ulElement.append(li);
+const renderPost = (body, post) => {
+  const section = document.createElement('section');
+  const domString = `
+    <p>
+      <strong>Post: </strong>${post.title}
+    </p>
+    <p>
+      <strong>Author: </strong>${post.author.firstName}
+    </p>
+  `;
+  section.innerHTML = domString;
+  body.appendChild(section);
 };
