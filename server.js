@@ -7,10 +7,17 @@ import typeDefs from "./schema";
 import resolvers from "./resolvers";
 import db from "./models";
 
+const playground = {
+  settings: {
+    "editor.cursorShape": "line"
+  }
+};
+
 const server = new ApolloServer({
   typeDefs: gql(typeDefs),
   resolvers,
-  context: { db }
+  context: { db },
+  playground
 });
 
 const app = express();
