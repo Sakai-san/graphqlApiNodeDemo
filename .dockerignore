@@ -1,0 +1,4 @@
+# do not copy into docker images
+
+node_modules
+npm-debug.log
