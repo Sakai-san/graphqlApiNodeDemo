@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "build": "webpack --entry ./app/public/js/index.js --output-filename bundle.min.js --output-path ./app/public/js ",
-    "start": "npm run init-db && ./node_modules/nodemon/bin/nodemon.js --exec babel-node server.js",
-    "sequelize-skeleton": "./node_modules/sequelize-cli/lib/sequelize init:models; ./node_modules/sequelize-cli/lib/sequelize init:config",
+    "start": "npm run init-db && npx nodemon --exec babel-node server.js",
+    "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
     "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
   },
   "dependencies": {
