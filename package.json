@@ -6,7 +6,10 @@
     "build": "webpack --entry ./app/public/js/index.js --output-filename bundle.min.js --output-path ./app/public/js ",
     "start": "npm run init-db && npx nodemon --exec babel-node server.js",
     "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
-    "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -"
+    "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -",
+    "init-dockerize-db": "docker exec -it toma-mysql mysql -uroot <<< 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci'",
+    "dockerize-db": "docker run --name toma-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql",
+    "check-docker-logs": "docker logs toma-mysql"
   },
   "dependencies": {
     "apollo-boost": "^0.1.13",
@@ -15,7 +18,7 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
-    "mysql2": "^1.5.3",
+    "mysql2": "^2.0.0",
     "sequelize": "^5.9.4"
   },
   "private": true,
