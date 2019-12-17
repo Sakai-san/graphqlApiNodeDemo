@@ -7,8 +7,9 @@
     "start": "npm run init-db && npx nodemon --exec babel-node server.js",
     "sequelize-skeleton": "npx sequelize init:models; npx sequelize init:config",
     "init-db": "cd /opt/lampp/bin/ && echo 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci' | ./mysql -u root && cd -",
-    "init-dockerize-db": "docker exec -it toma-mysql mysql -uroot <<< 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci'",
-    "dockerize-db": "docker run --name toma-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql",
+    "dockerize-db": "docker run -p 3306:3306 --name toma-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql",
+    "init-dockerize-db": "docker exec -i toma-mysql mysql -uroot <<< 'DROP DATABASE IF EXISTS api_node_demo; CREATE DATABASE api_node_demo CHARACTER SET utf8 COLLATE utf8_general_ci'",
+    "start-dockerize-db": "npx nodemon --exec babel-node server.js",
     "check-docker-logs": "docker logs toma-mysql"
   },
   "dependencies": {
